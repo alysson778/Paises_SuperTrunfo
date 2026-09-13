@@ -4,7 +4,12 @@ using System.Text;
 
 namespace Paises_SuperTrunfo
 {
-    internal class Carta
+    public class Carta
     {
+        public string  Nacao { get; set; }
+        public decimal Pib {  get; set; }
+        public int Tamanho { get; set;}
+        public int Populacao { get; set; }
+        public float Idh { get; set; }
     }
 }
