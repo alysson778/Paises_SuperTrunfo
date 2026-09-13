@@ -1,3 +1,4 @@
 <Solution>
   <Project Path="Paises_SuperTrunfo/Paises_SuperTrunfo.csproj" />
+  <Project Path="SuperTrunfo.Testes/SuperTrunfo.Testes.csproj" Id="f7f2b494-a19f-4dba-8f04-51db2edaf94f" />
 </Solution>
