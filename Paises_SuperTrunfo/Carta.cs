@@ -9,7 +9,10 @@ namespace Paises_SuperTrunfo
         public string  Nacao { get; set; }
         public decimal Pib {  get; set; }
         public int Tamanho { get; set;}
-        public int Populacao { get; set; }
+        public long Populacao { get; set; }
         public float Idh { get; set; }
+        public bool IsSuperTrunfo { get; set; }
+        public string TipoCarta { get; set; }
+
     }
 }
