@@ -6,7 +6,7 @@ namespace Paises_SuperTrunfo
 {
         public class Jogador
         {
-            public string Nome { get; set; }
+        public string Nome { get; set; } = string.Empty;
 
             public List<Carta> Cartas { get; set; }
 
@@ -16,4 +16,4 @@ namespace Paises_SuperTrunfo
             }
         }
     }
-}
+
