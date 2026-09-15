@@ -22,7 +22,8 @@ namespace Paises_SuperTrunfo
                 2 => (decimal)Tamanho,
                 3 => (decimal)Populacao,
                 4 => (decimal)Idh,
-                _ => 0m
+                // Qualquer outro caso lança uma exceção porque a opção enviada está fora do alcance do esperado (1 a 4)
+                _ => throw new ArgumentOutOfRangeException(nameof(opcao), "Opção de atributo deve ser entre 1 e 4.")
             };
 
         }
