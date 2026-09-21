@@ -11,12 +11,12 @@ namespace Paises_SuperTrunfo
                 new Jogador { Nome = "Jogador 1" },
                 new Jogador { Nome = "Jogador 2" }
             };
-
-        int opcao;
+        public IReadOnlyList<Jogador> Jogadores => jogadores;
+       
 
 
         
-     public void MostrarBaralho(Baralho baralho) 
+     public void EmbaralharEMostrarBaralho(Baralho baralho) 
      {
             Console.WriteLine("--- Cartas antes de embaralhar ---");
             foreach (var carta in baralho.Cartas)
@@ -24,7 +24,7 @@ namespace Paises_SuperTrunfo
                 Console.WriteLine($"{carta.TipoCarta} - {carta.Nacao}");
             }
 
-            // 3. Embaralha as cartas
+            //Embaralha as cartas
             baralho.Embaralhar();
 
             Console.WriteLine("\n--- Cartas depois de embaralhar ---");
@@ -99,19 +99,24 @@ namespace Paises_SuperTrunfo
                     jogadores[0].Cartas.Add(cartaJogador1);
 
                 }
-                else
+                else if (AtributoJogador1 < AtributoJogador2)
                 {
                     Console.WriteLine("O Jogador 2 venceu!");
-                    // Jogador 2 Recebe as cartas
                     jogadores[1].Cartas.Add(cartaJogador2);
                     jogadores[1].Cartas.Add(cartaJogador1);
+                }
+                else
+                {
+                    Console.WriteLine("Empate! Cada jogador fica com a sua carta.");
+                    jogadores[0].Cartas.Add(cartaJogador1);
+                    jogadores[1].Cartas.Add(cartaJogador2);
                 }
             }
         }
         public void Rodadas()
         {
             int rodada = 1;
-
+            
             // O jogo continua enquanto AMBOS tiverem cartas
             while (jogadores[0].Cartas.Count > 0 && jogadores[1].Cartas.Count > 0)
             {
@@ -133,8 +138,9 @@ namespace Paises_SuperTrunfo
                 jogadores[0].Cartas.RemoveAt(0);
                 jogadores[1].Cartas.RemoveAt(0);
 
-
-                 // Declarada fora para ser vista pelo restante do código
+                int opcao; 
+                // opção que o jogador irá escolher qual atributo vai ser comparado
+                // Declarada fora para ser vista pelo restante do código
 
                 while (true)
                 {
@@ -184,7 +190,7 @@ namespace Paises_SuperTrunfo
         }
         public void IniciarJogo(Baralho baralho)
         {
-            MostrarBaralho(baralho);
+            EmbaralharEMostrarBaralho(baralho);
             baralho.DistribuirCartas(jogadores);
             Rodadas();
         }

@@ -22,8 +22,4 @@ baralho.AdicionarCarta(new Carta { Nacao = "Rússia", Pib = 2000000000000m, Tama
 baralho.AdicionarCarta(new Carta { Nacao = "Austrália", Pib = 1700000000000m, Tamanho = 7692024, Populacao = 27000000, Idh = 0.946f, IsSuperTrunfo = false, TipoCarta = "1D" });
 
 
-
-
-
-
 logicaDoJogo.IniciarJogo(baralho);
